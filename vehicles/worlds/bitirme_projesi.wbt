@@ -1,0 +1,1788 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  info [
+    "Autonomous Vehicle Simulation"
+    "The simple controller example uses an on-board camera to follow the yellow road lines and a SICK sensor to avoid the obstacles."
+    "The control of the vehicle is done using the driver library."
+    "The vehicle based on the Car PROTO is modelled with realistic physics properties: motor torques, body mass, friction forces, suspensions, etc."
+  ]
+  title "City"
+  ERP 0.6
+  basicTimeStep 10
+  lineScale 1
+  contactProperties [
+    ContactProperties {
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "CitroenCZeroWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "ToyotaPriusWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "LincolnMKZWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "RangeRoverSportSVRWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "TruckWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.10368188076769148 0.533616296020927 -0.8393471964696019 0.4549381988140235
+  position -338.0004093198022 133.71061563129166 96.16331134365177
+  near 1
+  followType "None"
+  followSmoothness 0
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Fog {
+  color 0.38 0.35 0.32
+  visibilityRange 1000
+}
+DEF GROUND Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022a/projects/vehicles/worlds/textures/ground.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 500 500
+        }
+      }
+      geometry DEF GROUND_PLANE Plane {
+        size 2000 2000
+      }
+    }
+  ]
+  boundingObject USE GROUND_PLANE
+  locked TRUE
+}
+RangeRoverSportSVR {
+  hidden position_0_0 0.023221107562445886
+  hidden position2_0_0 11547.342234166086
+  hidden position_0_1 0.022661980233607246
+  hidden position2_0_1 11729.594738419506
+  hidden position_0_2 11539.861189093312
+  hidden position_0_3 11722.619219969567
+  hidden rotation_1 0.9870270474674946 0.03410734636889434 0.15688944034342225 6.149658926316119
+  hidden rotation_2 0.9948018797247369 0.018529276315103312 -0.10012934642435721 0.20298216593901441
+  hidden rotation_3 1 0 0 1.0735627122119542
+  hidden rotation_4 1 0 0 5.785308773145415
+  translation 23.88842893516938 -94.58959802374603 0.3073503117970934
+  rotation 0.0002606504684456293 0.014396477940415023 0.9998963313685296 0.7191154194073233
+  color 0.1 0.6 0.3
+  plate [
+    "plaka/plaka9.png"
+  ]
+  name "vehicle(26)"
+  controller "autonomous_vehicle"
+  sensorsSlotTop [
+    Camera {
+      translation 0.24 0 0.01
+      children [
+        Transform {
+          translation -0.05 0 0
+          rotation 0 -1 0 1.57
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.8 0.8
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.04
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 1
+      width 128
+    }
+  ]
+  sensorsSlotCenter [
+    Gyro {
+    }
+    GPS {
+    }
+    Display {
+      width 200
+      height 150
+    }
+  ]
+}
+RangeRoverSportSVR {
+  hidden position_0_0 -0.1738783562344759
+  hidden position2_0_0 10765.951519894617
+  hidden position_0_1 -0.15075587630902787
+  hidden position2_0_1 10945.668070980782
+  hidden position_0_2 10756.2159746417
+  hidden position_0_3 10936.750768208887
+  hidden rotation_1 0.9961450456352974 0.08682288983412424 -0.012523332507889463 3.4270071139666376
+  hidden rotation_2 0.9210957074390632 0.06956209194380074 0.38307155089060596 0.38929966312537895
+  hidden rotation_3 1 0 0 0.5972712497519623
+  hidden rotation_4 1 0 0 4.008333716406696
+  translation -150.23242888824922 59.33771204764532 0.3075224497306084
+  rotation -0.005116806126596171 0.0006204233216379481 0.999986716596758 -2.5616082216422975
+  color 0.1 0.6 1
+  plate [
+    "plaka/plaka9.png"
+  ]
+  name "vehicle(25)"
+  controller "autonomous_vehicle"
+  sensorsSlotTop [
+    Camera {
+      translation 0.24 0 0.01
+      children [
+        Transform {
+          translation -0.05 0 0
+          rotation 0 -1 0 1.57
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.8 0.8
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.04
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 1
+      width 128
+    }
+  ]
+  sensorsSlotCenter [
+    Gyro {
+    }
+    GPS {
+    }
+    Display {
+      width 200
+      height 150
+    }
+  ]
+}
+RangeRoverSportSVR {
+  translation -112.84878933737737 79.73804959492853 0.3261095575442977
+  rotation -0.006465400848318189 -0.000635190114183996 0.9999788973400334 -3.0833990583473883
+  color 0.5 0.6 0.3
+  plate [
+    "plaka/plaka9.png"
+  ]
+  name "vehicle(24)"
+  controller "autonomous_vehicle"
+  sensorsSlotTop [
+    Camera {
+      translation 0.24 0 0.01
+      children [
+        Transform {
+          translation -0.05 0 0
+          rotation 0 -1 0 1.57
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.8 0.8
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.04
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 1
+      width 128
+    }
+  ]
+  sensorsSlotCenter [
+    Gyro {
+    }
+    GPS {
+    }
+    Display {
+      width 200
+      height 150
+    }
+  ]
+}
+Tree {
+  translation 2 127 0
+  name "tree3"
+}
+Tree {
+  translation 2 123 0
+  name "tree4"
+}
+Pine {
+  translation 2 126.56 0
+  name "pine tree(2)"
+}
+Pine {
+  translation 2 103.27 0
+  name "pine tree(1)"
+}
+Pine {
+  translation 2 121 0
+}
+SimpleTree {
+  translation 2 130 0
+  name "tree5"
+  type "crab apple tree"
+}
+SimpleTree {
+  translation 2 100 0
+  name "tree6"
+  type "crab apple tree"
+}
+PalmTree {
+  translation 2 114.17 0
+  name "palm tree(3)"
+}
+PalmTree {
+  translation 2 131.71 0
+  name "palm tree(2)"
+}
+PalmTree {
+  translation 2 102.28 0
+  name "palm tree(1)"
+}
+Oak {
+  translation 2 125.23 0
+  name "oak tree(1)"
+}
+BigSassafras {
+  translation -49.53 137.84 0
+  name "sassafras tree(18)"
+}
+BigSassafras {
+  translation -46.61 137.84 0
+  name "sassafras tree(19)"
+}
+BigSassafras {
+  translation -56.37 137.84 0
+  name "sassafras tree(16)"
+}
+BigSassafras {
+  translation -59.62 137.84 0
+  name "sassafras tree(15)"
+}
+BigSassafras {
+  translation -64.59 137.84 0
+  name "sassafras tree(14)"
+}
+BigSassafras {
+  translation -67.79 137.84 0
+  name "sassafras tree(13)"
+}
+BigSassafras {
+  translation -71.22 137.84 0
+  name "sassafras tree(12)"
+}
+BigSassafras {
+  translation -74.46 137.84 0
+  name "sassafras tree(11)"
+}
+BigSassafras {
+  translation -78.03 137.84 0
+  name "sassafras tree(10)"
+}
+BigSassafras {
+  translation -81.37 137.84 0
+  name "sassafras tree(9)"
+}
+BigSassafras {
+  translation -94.54 137.84 0
+  name "sassafras tree(5)"
+}
+BigSassafras {
+  translation -97.68 137.84 0
+  name "sassafras tree(4)"
+}
+BigSassafras {
+  translation -100.11 137.84 0
+  name "sassafras tree(3)"
+}
+SimpleTree {
+  translation -112 93 0
+  name "tree(14)"
+  type "random"
+}
+SimpleTree {
+  translation 2 115 0
+  name "tree(13)"
+  type "random"
+}
+SimpleTree {
+  translation 2 110 0
+  name "tree(12)"
+  type "random"
+}
+SimpleTree {
+  translation -112 102 0
+  name "tree(10)"
+  type "random"
+}
+SimpleTree {
+  translation -112 124 0
+  name "tree(9)"
+  type "random"
+}
+SimpleTree {
+  translation -112 126 0
+  name "tree(7)"
+  type "random"
+}
+DEF GROUND Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022a/projects/vehicles/worlds/textures/ground.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 500 500
+        }
+      }
+      geometry DEF GROUND_PLANE Plane {
+        size 2000 2000
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE GROUND_PLANE
+  locked TRUE
+}
+Tree {
+  translation 2 97 0
+  name "tree7"
+}
+Oak {
+  translation 2 125 0
+}
+BigSassafras {
+  translation -43.36 137.84 0
+  name "sassafras tree(20)"
+}
+BigSassafras {
+  translation -40.93 137.84 0
+  name "sassafras tree(21)"
+}
+BigSassafras {
+  translation -37.21 137.84 0
+  name "sassafras tree(22)"
+}
+BigSassafras {
+  translation -33.44 137.84 0
+  name "sassafras tree(23)"
+}
+BigSassafras {
+  translation -25.79 137.84 0
+  name "sassafras tree(24)"
+}
+BigSassafras {
+  translation -28.35 137.84 0
+  name "sassafras tree(25)"
+}
+BigSassafras {
+  translation -22.28 137.84 0
+  name "sassafras tree(26)"
+}
+BigSassafras {
+  translation -17.6 137.84 0
+  name "sassafras tree(27)"
+}
+BigSassafras {
+  translation -12.72 137.84 0
+  name "sassafras tree(28)"
+}
+BigSassafras {
+  translation -8.83 137.84 0
+  name "sassafras tree(29)"
+}
+BigSassafras {
+  translation -4.9 137.84 0
+  name "sassafras tree(30)"
+}
+BigSassafras {
+  translation -52.98 137.84 0
+  name "sassafras tree(17)"
+}
+SimpleTree {
+  translation -112 95 0
+  name "tree(8)"
+  type "random"
+}
+SimpleTree {
+  translation 2 108 0
+  name "tree9"
+  type "crab apple tree"
+}
+SimpleTree {
+  translation -112 98 0
+  name "tree10"
+  type "crab apple tree"
+}
+SimpleTree {
+  translation -112 105 0
+  name "tree(1)"
+  type "crab apple tree"
+}
+Bench {
+  translation -91.73 16.26 0
+  rotation 0 0 1 3.14159
+  name "bench(2)"
+}
+Bench {
+  translation -91.73 12.7 0
+  rotation 0 0 1 3.14159
+  name "bench(1)"
+}
+PublicToilet {
+  translation -36.85 1.65662e-05 0
+  rotation 0 0 1 1.5708
+  name "public toilet(1)"
+}
+PublicToilet {
+  translation -41.36 0 0
+  rotation 0 0 1 1.5708
+}
+Atm {
+  translation -1.31 41.07 0
+  rotation 0 0 1 3.14159
+  name "ATM(2)"
+}
+Atm {
+  translation -1.31 43.75 0
+  rotation 0 0 1 3.14159
+  name "ATM(1)"
+}
+Atm {
+  translation -1.31 42.38 0
+  rotation 0 0 1 3.14159
+}
+FastFoodRestaurant {
+  translation -97.5011 2.83624 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "fast food restaurant(1)"
+  height 5
+  length 11
+  width 15
+}
+StreetLight {
+  translation -127.861 -83.9612 0
+  rotation 0 0 1 -2.3561953071795863
+  name "street light(19)"
+}
+StreetLight {
+  translation -0.7107 -88.6012 0
+  rotation 0 0 1 -1.5707953071795862
+  name "street light(16)"
+}
+StreetLight {
+  translation 31.37 -71.15 0
+  rotation 0 0 1 -0.785395307179586
+  name "street light(15)"
+}
+StreetLight {
+  translation 38.36 -33.56 0
+  name "street light(14)"
+}
+StreetLight {
+  translation 38.36 0 0
+  name "street light(13)"
+}
+TheThreeTowers {
+  translation 121.55 18.44 0
+}
+ParkingLines {
+  translation -107.12 29.92 0.1
+  numberOfCarParks 14
+  carParkLength 5.6
+  carParkWidth 2.6
+}
+BmwX5 {
+  hidden position_0_0 2.277509174611614e-09
+  hidden position2_0_0 -5.527776076580666e-06
+  hidden position_0_1 -2.277506735008072e-09
+  hidden position2_0_1 -5.527776091455055e-06
+  hidden position_0_2 -0.001656975229316501
+  hidden position_0_3 -0.0016569752293030527
+  hidden rotation_1 0.9999999151231339 -1.1387544906518865e-09 -0.0004120118018070622 5.527748381842543e-06
+  hidden rotation_2 -0.9999999151233162 -1.1387532708504266e-09 0.0004120113593630661 5.527748381842543e-06
+  hidden rotation_3 1 0 0 0.0016569752293103877
+  hidden rotation_4 -1 0 0 0.0016569752293103877
+  translation -85.7365000761001 31.986177463635258 0.31789643433233844
+  rotation 0.002210609600440251 -0.002210524529891235 0.9999951133813091 1.5708396970071312
+  color 0 0.01 0.1
+  name "vehicle(23)"
+}
+TeslaModel3 {
+  hidden position_0_0 -9.30993185402444e-06
+  hidden position2_0_0 0.0015005956214427054
+  hidden position_0_1 9.30998124670356e-06
+  hidden position2_0_1 0.0015006103832995404
+  hidden position_0_2 -0.00012703980348959898
+  hidden position_0_3 -0.00012703857800123005
+  hidden rotation_1 -0.0007456428084026944 -0.9999994370316105 0.0007549524913108489 1.5707965699537696
+  hidden rotation_2 0.0007456501646288749 -0.9999994370205344 -0.0007549598969271718 1.5707965699649518
+  hidden rotation_3 6.35199223319234e-05 -0.9999999959652208 -6.351990157394027e-05 1.5707960040347777
+  hidden rotation_4 -6.351930958754364e-05 -0.9999999959652986 6.351928882976075e-05 1.5707960040347
+  translation -21.394199678597225 49.17300383191296 0.2726681462649138
+  rotation -0.0038862907746496224 -0.003888427996639111 -0.9999848883216834 1.5702616536200003
+  color 1 0.6 0.5
+  name "vehicle(21)"
+}
+LincolnMKZ {
+  hidden position_0_0 -1.220010218262646e-09
+  hidden position2_0_0 2.6721058081550817e-05
+  hidden position_0_1 1.3067079207199124e-09
+  hidden position2_0_1 2.670919049329916e-05
+  hidden position_0_2 -2.122443289188724e-05
+  hidden position_0_3 -2.1235930880157658e-05
+  hidden rotation_1 -0.9999999989577075 -6.100051084955193e-10 4.565725702908395e-05 2.6721052097799765e-05
+  hidden rotation_2 0.999999998803244 -6.533539595780509e-10 -4.892353137420055e-05 2.6709183173988013e-05
+  hidden rotation_3 1 0 0 2.1224443197614715e-05
+  hidden rotation_4 -1 0 0 2.1235927081274273e-05
+  translation -6.669421537206661 98.26616312593335 0.3139891466006024
+  rotation 0.0014572584246656105 0.0014588955485642036 -0.9999978740085712 1.5696756555033684
+  color 0 0 0
+  name "vehicle(19)"
+}
+TeslaModel3Simple {
+  translation -7.75 124.53 0.95
+  rotation 0 0 1 1.5708
+  name "vehicle(14)"
+}
+TeslaModel3Simple {
+  translation -66.69 124.94 0.59
+  rotation 0 0 1 1.5708
+  name "vehicle(13)"
+}
+BmwX5 {
+  hidden position_0_0 2.277887524074851e-09
+  hidden position2_0_0 -5.863101476029086e-06
+  hidden position_0_1 -2.2778898197988354e-09
+  hidden position2_0_1 -5.86310150968012e-06
+  hidden position_0_2 -0.0016587101752657285
+  hidden position_0_3 -0.0016587101753075936
+  hidden rotation_1 0.9999999245290726 -1.1389436760802835e-09 -0.0003885123533111337 5.8631098877727225e-06
+  hidden rotation_2 -0.9999999245289216 -1.138944823942017e-09 0.00038851274263572937 5.8631098877727225e-06
+  hidden rotation_3 1 0 0 0.001658710175303622
+  hidden rotation_4 -1 0 0 0.001658710175303622
+  translation -26.219799865072613 110.71636202809154 0.31789643433233017
+  rotation 0.0022106096002798563 -0.002210556696797678 0.9999951133102027 1.570825145409874
+  color 0.7 0.1 0.1
+  name "vehicle(8)"
+}
+MercedesBenzSprinter {
+  hidden position_0_0 -2.6330720492196987e-09
+  hidden position2_0_0 -1.2802361265854619e-05
+  hidden position_0_1 2.6330718998022394e-09
+  hidden position2_0_1 -1.2802361258977716e-05
+  hidden position_0_2 0.14770996923597451
+  hidden position_0_3 0.14770996923460558
+  hidden rotation_1 0.9999999788497591 1.3165359967647953e-09 0.00020567080859656219 1.2802378406309585e-05
+  hidden rotation_2 -0.9999999788497616 1.3165359220560702e-09 -0.00020567079703595482 1.2802378406309585e-05
+  hidden rotation_3 -1 0 0 0.1477099692359731
+  hidden rotation_4 1 0 0 0.1477099692346069
+  translation -73.86990001695794 61.461016602352736 0.374548992428894
+  rotation -0.0015608120020030626 0.0015608062688320773 0.9999975638718753 1.570802436130436
+  color 0 0.3 0.1
+  name "Mercedes-Benz Sprinter(5)"
+}
+MercedesBenzSprinter {
+  hidden position_0_0 -2.6329475441843245e-09
+  hidden position2_0_0 -1.3398300121205038e-05
+  hidden position_0_1 2.632949489722442e-09
+  hidden position2_0_1 -1.339830020724849e-05
+  hidden position_0_2 0.07850343474711685
+  hidden position_0_3 0.07850343474611203
+  hidden rotation_1 0.9999999806912127 1.3164737466726501e-09 0.00019651354794917867 1.3398290237875957e-05
+  hidden rotation_2 -0.9999999806911842 1.3164747194416527e-09 -0.00019651369189499802 1.3398290237875957e-05
+  hidden rotation_3 -1 0 0 0.07850343474711416
+  hidden rotation_4 1 0 0 0.07850343474611263
+  translation -84.34000001682173 61.53047955951802 0.37454899242889167
+  rotation -0.0015608120020020174 0.0015608062688308953 0.9999975638718753 1.5708024361304738
+  color 0 0 0.1
+  name "Mercedes-Benz Sprinter(4)"
+}
+MercedesBenzSprinter {
+  hidden position_0_0 -2.632785777396683e-09
+  hidden position2_0_0 -1.306011212585494e-05
+  hidden position_0_1 2.632786030451587e-09
+  hidden position2_0_1 -1.3060112007703683e-05
+  hidden position_0_2 0.009867009885689315
+  hidden position_0_3 0.00986700988680345
+  hidden rotation_1 0.9999999796807709 1.3163928619502528e-09 0.0002015898254541774 1.3060117606600557e-05
+  hidden rotation_2 -0.9999999796807666 1.3163929884776968e-09 -0.00020158984665407057 1.3060117606600557e-05
+  hidden rotation_3 -1 0 0 0.009867009885703715
+  hidden rotation_4 0.9999999999999999 0 0 0.009867009886783898
+  translation -90.56999999489997 94.7950115742735 0.3745489924288914
+  rotation -0.0015608120020021497 0.0015608062688310588 0.9999975638718753 1.5708024361304742
+  color 0.5 0 0.1
+  name "Mercedes-Benz Sprinter(2)"
+}
+Wall {
+  translation -20.15 27 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(12)"
+  size 0.4 40 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+ParkingLines {
+  translation -39.59 29.92 0.1
+  numberOfCarParks 14
+  carParkLength 5.6
+  carParkWidth 2.6
+}
+ParkingLines {
+  translation -37.84 44.74 0.1
+  numberOfCarParks 13
+  carParkLength 5.6
+  carParkWidth 2.6
+}
+ParkingLines {
+  translation -96.77 108.48 0.1
+  numberOfCarParks 9
+  carParkLength 5.6
+  carParkWidth 2.6
+}
+ParkingLines {
+  translation -104.06 58.78 0.1
+  numberOfCarParks 12
+  carParkLength 8.5
+  carParkWidth 2.6
+}
+StreetLight {
+  translation -108.051 28.4327 0
+  rotation 0 0 1 0.523596
+  name "street light(11)"
+}
+StreetLight {
+  translation -69.1132 67.9755 0
+  rotation 0 0 1 -0.5236053071795865
+  name "street light(10)"
+}
+StreetLight {
+  translation -39.9746 92.5423 0
+  rotation 0 0 1 2.61799
+  name "street light(9)"
+  radius 1006
+}
+StreetLight {
+  translation -1.44035 68.2134 0
+  rotation 0 0 1 -2.094395307179586
+  name "street light(8)"
+}
+StreetLight {
+  translation -0.788019 28.0246 0
+  rotation 0 0 -1 -2.6179953071795863
+  name "street light(7)"
+}
+Wall {
+  translation -20.8199 69.61 0
+  rotation 0 0 1 1.5708
+  name "wall(9)"
+  size 0.4 42 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -109.78 48.15 0
+  name "wall(8)"
+  size 0.4 42 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation 0 47.97 0
+  name "wall(7)"
+  size 0.4 42 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -90.04 26.97 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(6)"
+  size 0.4 40 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+CyberboticsTower {
+  translation -8.3 -178.85 0
+  name "Cyberbotics tower(3)"
+}
+CyberboticsTower {
+  translation -28.19 -178.85 0
+  name "Cyberbotics tower(2)"
+}
+CommercialBuilding {
+  translation 121.9 -37.8 0
+  name "commercial building(3)"
+}
+ParkingLines {
+  translation -36.35 92.42 0.1
+  numberOfCarParks 12
+  carParkLength 8.5
+  carParkWidth 2.6
+}
+StreetLight {
+  translation -39.8648 67.9821 0
+  rotation 0 0 1 -2.3561953071795863
+  name "street light(6)"
+  radius 1006
+}
+DEF GROUND Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2022a/projects/vehicles/worlds/textures/ground.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 500 500
+        }
+      }
+      geometry DEF GROUND_PLANE Plane {
+        size 2000 2000
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE GROUND_PLANE
+  locked TRUE
+}
+PedestrianCrossing {
+  translation -159.56 -22.8113 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "pedestrian crossing(1)"
+}
+Tree {
+  translation 2 95 0
+  name "tree11"
+}
+Tree {
+  translation 2 117 0
+  name "tree12"
+}
+PalmTree {
+  translation 2 128 0
+}
+BigSassafras {
+  translation -84.8 137.84 0
+  name "sassafras tree(8)"
+}
+BigSassafras {
+  translation -88.14 137.84 0
+  name "sassafras tree(7)"
+}
+BigSassafras {
+  translation -91.63 137.84 0
+  name "sassafras tree(6)"
+}
+BigSassafras {
+  translation -104.19 137.84 0
+  name "sassafras tree(2)"
+}
+BigSassafras {
+  translation -107.51 137.84 0
+  name "sassafras tree(1)"
+}
+SimpleTree {
+  translation -112 100 0
+  name "tree(15)"
+  type "random"
+}
+SimpleTree {
+  translation 2 106 0
+  name "tree(11)"
+  type "random"
+}
+SimpleTree {
+  translation 2 120 0
+  name "tree(6)"
+  type "crab apple tree"
+}
+SimpleTree {
+  translation -112 129 0
+  name "tree(5)"
+  type "crab apple tree"
+}
+SimpleTree {
+  translation 2 112 0
+  name "tree13"
+  type "crab apple tree"
+}
+Bench {
+  translation -113.58 121.9 0
+  rotation 0 0 1 -1.5707953071795862
+  name "bench(5)"
+}
+Bench {
+  translation -113.58 109.31 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "bench(4)"
+}
+Bench {
+  translation -103.94 16.32 0
+  name "bench(3)"
+}
+StreetLight {
+  translation -147.521 20.3288 0
+  rotation 0 0 1 3.14159
+  name "street light(21)"
+}
+StreetLight {
+  translation -147.521 -27.4912 0
+  rotation 0 0 1 3.14159
+  name "street light(20)"
+}
+StreetLight {
+  translation -69.3907 -88.6012 0
+  rotation 0 0 1 -1.5707953071795862
+  name "street light(18)"
+}
+StreetLight {
+  translation -33.2907 -88.6012 0
+  rotation 0 0 1 -1.5707953071795862
+  name "street light(17)"
+}
+ParkingLines {
+  translation -106.15 44.74 0.1
+  numberOfCarParks 13
+  carParkLength 5.6
+  carParkWidth 2.6
+}
+ToyotaPrius {
+  hidden position_0_0 2.9063631753713273e-10
+  hidden position2_0_0 -1.7016988176656171e-06
+  hidden position_0_1 -1.5705232450199635e-09
+  hidden position2_0_1 -1.7072083419803795e-06
+  hidden position_0_2 -0.0006505872160749085
+  hidden position_0_3 -0.0006507733367230516
+  hidden rotation_1 0.9999999854150695 -1.4531815664911113e-10 -0.00017079186415422542 1.7016056088948998e-06
+  hidden rotation_2 -0.9999995768586983 -7.852612902333566e-10 0.000919936097924937 1.7073375686887429e-06
+  hidden rotation_3 1 0 0 0.0008398933438327112
+  hidden rotation_4 -1 0 0 0.0008400854930864276
+  translation -38.549900407885524 31.86391118798023 0.2690812511826063
+  rotation 0.0011699564531579484 -0.0011699250094263857 0.9999986312377483 1.5708022968174704
+  name "vehicle(22)"
+}
+LincolnMKZ {
+  hidden position_0_0 -1.288136782715666e-09
+  hidden position2_0_0 2.7425093868596905e-05
+  hidden position_0_1 1.2368759872089817e-09
+  hidden position2_0_1 2.7438548586112027e-05
+  hidden position_0_2 -2.1341411550463137e-05
+  hidden position_0_3 -2.134210090658197e-05
+  hidden rotation_1 -0.9999999988969436 -6.440683906473893e-10 4.69692751968671e-05 2.742510038571313e-05
+  hidden rotation_2 0.9999999989839851 -6.184379929761487e-10 -4.507803982389721e-05 2.7438553304305907e-05
+  hidden rotation_3 1 0 0 2.1341417883301626e-05
+  hidden rotation_4 -1 0 0 2.1342104562520473e-05
+  translation -7.328146676378135 34.82374618057682 0.3139891466005974
+  rotation 0.001457258424636271 0.001458892332203494 -0.9999978740132637 1.569677860181578
+  color 0 0 0
+  name "vehicle(20)"
+}
+TeslaModel3 {
+  hidden position_0_0 -1.3891749497417054e-05
+  hidden position2_0_0 -0.0040218397165698895
+  hidden position_0_1 1.3771056314409569e-05
+  hidden position2_0_1 0.0050070004481387485
+  hidden position_0_2 -0.00019482602645001773
+  hidden position_0_3 -0.0001785870820852075
+  hidden rotation_1 0.0012481718346742338 -0.9999984646389991 -0.0012299539486194174 1.570797528513121
+  hidden rotation_2 0.0032662853935905944 -0.9999892720531506 -0.0032843809671920855 1.5708067639450223
+  hidden rotation_3 0.0001210433607704158 -0.9999999853485095 -0.00012104332121406965 1.5707960146514888
+  hidden rotation_4 -0.00011292388614146472 -0.9999999872482 0.00011292384923852143 1.5707960127517981
+  translation -18.270255133293837 113.53499107785018 0.2720596468488494
+  rotation -0.004088490347719942 -0.003833296438192428 -0.9999842949192221 1.6352200158818513
+  name "vehicle(18)"
+}
+TeslaModel3Simple {
+  translation -13.14 110.7 0.27
+  rotation 0 0 1 1.5708
+  color 1 1 1
+  name "vehicle(16)"
+}
+BmwX5 {
+  hidden position_0_0 2.277888699595645e-09
+  hidden position2_0_0 -5.863018611721625e-06
+  hidden position_0_1 -2.2778868242414064e-09
+  hidden position2_0_1 -5.863018638413815e-06
+  hidden position_0_2 -0.0016587201971510499
+  hidden position_0_3 -0.0016587201961881168
+  hidden rotation_1 0.9999999245268615 -1.1389442638381178e-09 -0.00038851804480300427 5.8630341443384555e-06
+  hidden rotation_2 -0.9999999245269866 -1.1389433261612117e-09 0.0003885177231727442 5.8630341443384555e-06
+  hidden rotation_3 1 0 0 0.0016587201972732978
+  hidden rotation_4 -1 0 0 0.0016587201962023775
+  translation -69.13990004402437 124.78683954964697 0.3178964343323322
+  rotation 0.0022106096002780526 -0.0022105566967976407 0.9999951133102027 1.5708251454098998
+  color 0 0.11 0.1
+  name "vehicle(12)"
+}
+BmwX5 {
+  hidden position_0_0 2.2778867698326686e-09
+  hidden position2_0_0 -5.863085521602912e-06
+  hidden position_0_1 -2.2778873707538407e-09
+  hidden position2_0_1 -5.863085486981303e-06
+  hidden position_0_2 -0.0016587069940723733
+  hidden position_0_3 -0.001658706992265109
+  hidden rotation_1 0.999999924528712 -1.1389432989588102e-09 -0.0003885132818748893 5.8631098877727225e-06
+  hidden rotation_2 -0.9999999245286714 -1.1389435994193272e-09 0.00038851338666135213 5.8631098877727225e-06
+  hidden rotation_3 1 0 0 0.0016587069941127574
+  hidden rotation_4 -1 0 0 0.0016587069922386322
+  translation -33.26989985494247 124.81993874009726 0.3178964343323314
+  rotation 0.002210609600281992 -0.0022105566967948113 0.9999951133102027 1.5708251454098818
+  color 0 0.4 0.1
+  name "vehicle(11)"
+}
+MercedesBenzSprinter {
+  hidden position_0_0 -2.632785867127542e-09
+  hidden position2_0_0 -1.3059978859606672e-05
+  hidden position_0_1 2.632785397153852e-09
+  hidden position2_0_1 -1.3059978844261391e-05
+  hidden position_0_2 0.0040277069556168745
+  hidden position_0_3 0.004027706955946929
+  hidden rotation_1 0.9999999796803548 1.3163929068151338e-09 0.00020159188938167528 1.3059981592045183e-05
+  hidden rotation_2 -0.999999979680362 1.316392671828303e-09 -0.00020159185363275234 1.3059981592045183e-05
+  hidden rotation_3 -1 0 0 0.004027706955594272
+  hidden rotation_4 1 0 0 0.004027706955925048
+  translation -74.86999999490114 95.30491188763477 0.37454899242888967
+  rotation -0.0015608120020005924 0.0015608062688311937 0.9999975638718753 1.5708024361304942
+  color 0 0.3 0.1
+  name "Mercedes-Benz Sprinter(3)"
+}
+MercedesBenzSprinter {
+  hidden position_0_0 -2.632814953034893e-09
+  hidden position2_0_0 -1.317880245666302e-05
+  hidden position_0_1 2.632816869013255e-09
+  hidden position2_0_1 -1.3178802469957508e-05
+  hidden position_0_2 -0.0007126598559500162
+  hidden position_0_3 -0.0007126598569195343
+  hidden rotation_1 0.9999999800446767 1.31640745024811e-09 0.00019977649024756412 1.3178794536592823e-05
+  hidden rotation_2 -0.9999999800446477 1.3164084082372334e-09 -0.00019977663542936842 1.3178794536592823e-05
+  hidden rotation_3 1 0 0 0.0007126598557208918
+  hidden rotation_4 -1 0 0 0.0007126598569671784
+  translation -85.3399999958602 94.85477296906969 0.3745489924288896
+  rotation -0.0015608120020009538 0.0015608062688308982 0.9999975638718753 1.5708024361304829
+  color 0 0 0.1
+  name "Mercedes-Benz Sprinter(1)"
+}
+StripBuilding {
+  translation 26.5201 -149.29 0
+  rotation 0 0 1 -1.5707953071795862
+  name "strip building(1)"
+  length 160
+}
+ParkingLines {
+  translation -36.35 58.78 0.1
+  numberOfCarParks 12
+  carParkLength 8.5
+  carParkWidth 2.6
+}
+StreetLight {
+  translation -107.682 67.9023 0
+  rotation 0 0 -1 1.0472
+  name "street light(12)"
+}
+Wall {
+  translation -89.2199 69.45 0
+  rotation 0 0 1 1.5708
+  name "wall(10)"
+  size 0.4 42 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+CyberboticsTower {
+  translation 11.65 -178.85 0
+  name "Cyberbotics tower(4)"
+}
+CommercialBuilding {
+  translation 121.9 -59.72 0
+  name "commercial building(2)"
+}
+CitroenCZero {
+  hidden position_0_0 -2.763400257401827e-07
+  hidden position2_0_0 0.0032464182344918665
+  hidden position_0_1 -2.784653722029335e-07
+  hidden position2_0_1 0.0032013825567501555
+  hidden position_0_2 -1.829338567088856e-05
+  hidden position_0_3 -1.9803804824365068e-05
+  hidden rotation_1 -0.9999999965090594 -1.119680086346759e-07 8.355757825354284e-05 0.004297879681932593
+  hidden rotation_2 0.999999996355915 1.1281955568261209e-07 8.537070592692357e-05 0.004240054225569856
+  hidden rotation_3 0.9999999999999999 0 0 1.690093880501728e-05
+  hidden rotation_4 -1 0 0 1.8395494055645637e-05
+  translation -90.19032243811078 125.25428651830033 0.18095367339076385
+  rotation 0.002554083420186454 -0.0024868844559132034 0.9999936460116062 1.570742340002734
+  color 1 0 0
+  name "vehicle(17)"
+}
+StreetLight {
+  translation -69.1907 92.0948 0
+  rotation 0 0 1 0.785394
+  name "street light(5)"
+}
+StreetLight {
+  translation -108.845 92.2099 0
+  rotation 0 0 1 0.523596
+  name "street light(4)"
+}
+StreetLight {
+  translation -109.029 131.117 0
+  rotation 0 0 -1 1.0472
+  name "street light(3)"
+}
+StreetLight {
+  translation -52.9387 131.117 0
+  rotation 0 0 -1 1.5708
+  name "street light(2)"
+}
+StreetLight {
+  translation -0.754168 131.442 0
+  rotation 0 0 1 -2.094395307179586
+  name "street light(1)"
+}
+StreetLight {
+  translation -0.86 92.36 0
+  rotation 0 0 -1 -2.6179953071795863
+}
+Wall {
+  translation -109.78 101.09 0
+  name "wall(5)"
+  size 0.4 20 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+FastFoodRestaurant {
+  translation -122.3 115.39 0
+  height 5
+  length 11
+  width 15
+}
+Wall {
+  translation -89.2199 91.33 0
+  rotation 0 0 1 1.5708
+  name "wall(4)"
+  size 0.4 42 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -20.8199 91.33 0
+  rotation 0 0 1 1.5708
+  name "wall(3)"
+  size 0.4 42 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+ParkingLines {
+  translation -37.84 109.31 0.1
+  numberOfCarParks 13
+  carParkLength 5.6
+  carParkWidth 2.6
+}
+ParkingLines {
+  translation -104.86 92.42 0.1
+  numberOfCarParks 12
+  carParkLength 8.5
+  carParkWidth 2.6
+}
+Wall {
+  translation -55.03 132.07 0
+  rotation 0 0 1 -1.5707953071795862
+  name "wall(2)"
+  size 0.4 110 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation -109.78 125.79 0
+  name "wall(1)"
+  size 0.4 12 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+Wall {
+  translation 0 111.27 0
+  size 0.4 42 1.8
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+StripBuilding {
+  translation 98.29 68.01 0
+  length 160
+}
+CommercialBuilding {
+  translation 121.79 -81.71 0
+}
+RangeRoverSportSVR {
+  hidden position_0_0 -0.020667308275474028
+  hidden position2_0_0 10717.238404850978
+  hidden position_0_1 -0.02009036420663385
+  hidden position2_0_1 10878.87694768213
+  hidden position_0_2 10707.784842549601
+  hidden position_0_3 10870.964812002954
+  hidden rotation_1 0.999917876894372 0.01033317331584971 0.0075805670154917145 1.8758075341772031
+  hidden rotation_2 -0.9999468015953159 -0.010044985583305762 -0.0023435536966149553 3.599980811259069
+  hidden rotation_3 -1 0 0 1.237079115585951
+  hidden rotation_4 1 0 0 1.054230582269599
+  translation 5.212690760063801 -99.42981868017523 0.3221099401392377
+  rotation -0.029295149438248756 0.15377718920090516 0.9876711853146571 0.09055062822712051
+  color 0.4 0.3 0.3
+  plate [
+    "plaka/plaka9.png"
+  ]
+  name "vehicle(15)"
+  controller "autonomous_vehicle"
+  sensorsSlotTop [
+    Camera {
+      translation 0.24 0 0.01
+      children [
+        Transform {
+          translation -0.05 0 0
+          rotation 0 -1 0 1.57
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.8 0.8 0.8
+                roughness 1
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.04
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 1
+      width 128
+    }
+  ]
+  sensorsSlotCenter [
+    Gyro {
+    }
+    GPS {
+    }
+    Display {
+      width 200
+      height 150
+    }
+  ]
+}
+ParkingLines {
+  translation -106.97 123.62 0.1
+  numberOfCarParks 40
+  carParkLength 5.6
+  carParkWidth 2.6
+}
+BmwX5 {
+  hidden position_0_0 2.2778887119830788e-09
+  hidden position2_0_0 -5.863228331067713e-06
+  hidden position_0_1 -2.2778885235474707e-09
+  hidden position2_0_1 -5.863228337504402e-06
+  hidden position_0_2 -0.0016587328412187906
+  hidden position_0_3 -0.001658732861745934
+  hidden rotation_1 0.9999999245322597 -1.1389442700379825e-09 -0.0003885041501794334 5.863261371705825e-06
+  hidden rotation_2 -0.9999999245322723 -1.1389441758202e-09 0.00038850411761439676 5.863261371705825e-06
+  hidden rotation_3 1 0 0 0.0016587328413127304
+  hidden rotation_4 -1 0 0 0.00165873286166006
+  translation -53.73984786888985 124.87415762382207 0.31789643433233744
+  rotation 0.0022106096004330953 -0.00221052452989944 0.9999951133813089 1.5708396970071319
+  color 0 0.01 0.1
+  name "vehicle(2)"
+}
+CitroenCZero {
+  hidden position_0_0 7.313474272353069e-06
+  hidden position2_0_0 0.05693965162036517
+  hidden position_0_1 1.2207614235796827e-05
+  hidden position2_0_1 0.03804257834827758
+  hidden position_0_2 0.0002854161156318473
+  hidden position_0_3 0.00028123876981609656
+  hidden rotation_1 -0.9999999922241983 3.6970021703841264e-06 -0.0001246512549956461 0.05799111350473759
+  hidden rotation_2 0.9999999518726451 -6.143898189929352e-06 -0.00031018858782578873 0.03908125187863363
+  hidden rotation_3 -1 0 0 0.0002868095133933435
+  hidden rotation_4 1 0 0 0.00028264517233966314
+  translation -79.83526331459208 125.27143098568949 0.18095367393864148
+  rotation 0.0025542273203631467 -0.002498408500653295 0.999993616918508 1.5661844675238252
+  name "vehicle(3)"
+}
+MotorbikeSimple {
+  translation -74.78 113.29 0.25
+  rotation 0 0 1 -1.5707953071795862
+  name "vehicle(4)"
+}
+ScooterSimple {
+  translation -77.39 112.94 0.23
+  rotation 0 0 1 -1.5707953071795862
+  name "vehicle(6)"
+}
+LincolnMKZ {
+  hidden position_0_0 -1.5545545290637797e-09
+  hidden position2_0_0 2.7596399946641084e-05
+  hidden position_0_1 1.5256101126043992e-09
+  hidden position2_0_1 2.7602393916283867e-05
+  hidden position_0_2 -2.1072295125398333e-05
+  hidden position_0_3 -2.106809792308201e-05
+  hidden rotation_1 -0.999999998413365 -7.772772632986345e-10 5.6331787099201876e-05 2.7596403398932217e-05
+  hidden rotation_2 0.9999999984725618 -7.62805055137062e-10 -5.527093464444898e-05 2.7602389080091175e-05
+  hidden rotation_3 1 0 0 2.1072286259907977e-05
+  hidden rotation_4 -1 0 0 2.1068092004592705e-05
+  translation -16.89180004159539 98.50588041555004 0.3139891466005983
+  rotation 0.0014572584280261069 0.001457299408773482 -0.9999978763358985 1.5707703282935201
+  name "vehicle(7)"
+}
+MercedesBenzSprinter {
+  hidden position_0_0 -2.632793540490914e-09
+  hidden position2_0_0 -1.3177240375714016e-05
+  hidden position_0_1 2.6327934908636766e-09
+  hidden position2_0_1 -1.317724041090844e-05
+  hidden position_0_2 -0.0013080353056235277
+  hidden position_0_3 -0.0013080353065181764
+  hidden rotation_1 0.9999999800402701 1.316396743970533e-09 0.00019979854755896188 1.3177244371659135e-05
+  hidden rotation_2 -0.9999999800402709 1.3163967191569158e-09 -0.0001997985432591975 1.3177244371659135e-05
+  hidden rotation_3 1 0 0 0.0013080353057852486
+  hidden rotation_4 -1 0 0 0.0013080353064642658
+  translation -98.29999999490403 95.07761265883902 0.37454899242889006
+  rotation -0.0015608120020003532 0.0015608062688317718 0.9999975638718753 1.5708024361304673
+  color 1 1 1
+}
+TeslaModel3 {
+  hidden position_0_0 -9.769634456389472e-06
+  hidden position2_0_0 0.00401454315565339
+  hidden position_0_1 9.769636160783723e-06
+  hidden position2_0_1 0.0040144846602551305
+  hidden position_0_2 -7.7662885217666e-05
+  hidden position_0_3 -7.766468907417732e-05
+  hidden rotation_1 -0.0020023820248634256 -0.9999959708492424 0.002012150965492648 1.5708000487692086
+  hidden rotation_2 0.0020023527765382194 -0.9999959709666567 -0.002012121718882537 1.5708000486515117
+  hidden rotation_3 3.883145525971688e-05 -0.9999999984921186 -3.883144256979756e-05 1.5707960015078812
+  hidden rotation_4 -3.883235718826462e-05 -0.9999999984920487 3.883234449805046e-05 1.5707960015079494
+  translation -22.420949271067887 98.70796999375375 0.2720596551134709
+  rotation -0.0040884874937807715 -0.004090735840579204 -0.9999832749352839 1.5702632804714474
+  color 1 0.6 0.5
+  name "vehicle(9)"
+}
+ToyotaPrius {
+  hidden position_0_0 1.801175087824058e-10
+  hidden position2_0_0 -1.7783601616154516e-06
+  hidden position_0_1 -1.68114987099003e-09
+  hidden position2_0_1 -1.7855031535744344e-06
+  hidden position_0_2 -0.000651059661807439
+  hidden position_0_3 -0.0006512569295472383
+  hidden rotation_1 0.9999999948708851 -9.00587539292812e-11 -0.00010128291880700773 1.7784272131724577e-06
+  hidden rotation_2 -0.9999995567371488 -8.405745628993724e-10 0.0009415548342397337 1.7854053736627885e-06
+  hidden rotation_3 0.9999999999999999 0 0 0.0008403657755549592
+  hidden rotation_4 -1 0 0 0.0008405690933436825
+  translation -20.31000646334665 124.49228820999433 0.269081251182603
+  rotation 0.0011699564531989933 -0.001169925010433685 0.999998631237747 1.5708022959232995
+  name "vehicle(10)"
+}
+TeslaModel3Simple {
+  translation -14.4 95.34 0.4
+  rotation 0 0 1 1.5708
+  name "vehicle(1)"
+}
+StraightRoadSegment {
+  translation -160 -50 0.1
+  rotation 0 0 1 1.5707996938995747
+  name "road(7)"
+  width 20
+  speedLimit 23
+  lines [
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  roadBorderHeight 0.2
+  rightBarrier TRUE
+  leftBarrier TRUE
+  length 80
+}
+StraightRoadSegment {
+  translation -110 -100 0.1
+  name "road(6)"
+  width 20
+  speedLimit 23
+  lines [
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  roadBorderHeight 0.2
+  rightBarrier TRUE
+  leftBarrier TRUE
+  length 110
+}
+CurvedRoadSegment {
+  translation -110 30 0.1
+  rotation 0 0 1 1.5707996938995747
+  name "road(5)"
+  width 20
+  speedLimit 14
+  lines [
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  roadBorderHeight 0.2
+  rightBarrier TRUE
+  leftBarrier TRUE
+  curvatureRadius 50
+}
+CurvedRoadSegment {
+  translation -110 -50 0.1
+  rotation 0 0 1 -3.141592653589793
+  name "road(4)"
+  width 20
+  speedLimit 14
+  lines [
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  roadBorderHeight 0.2
+  rightBarrier TRUE
+  leftBarrier TRUE
+  curvatureRadius 50
+}
+CurvedRoadSegment {
+  translation 0 -50 0.1
+  rotation 0 0 1 -1.5707996938995747
+  name "road(3)"
+  width 20
+  speedLimit 14
+  lines [
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  roadBorderHeight 0.2
+  rightBarrier TRUE
+  leftBarrier TRUE
+  curvatureRadius 50
+}
+StraightRoadSegment {
+  translation -110 80 0.1
+  name "road(2)"
+  width 20
+  speedLimit 23
+  lines [
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  roadBorderHeight 0.2
+  length 110
+}
+DogHouse {
+  translation -42.64 76.37 0
+}
+Wall {
+  translation -43.4 76.95 0
+  rotation 0 0 1 1.5708
+  name "wall(14)"
+  size 3 0.3 0.4
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+PottedTree {
+  translation -42.64 70.4 0
+  name "potted tree(4)"
+}
+PottedTree {
+  translation -42.64 70.96 0
+  name "potted tree(3)"
+}
+PottedTree {
+  translation -42.64 72.15 0
+  name "potted tree(1)"
+}
+PottedTree {
+  translation -42.64 71.61 0
+  name "potted tree(2)"
+}
+PottedTree {
+  translation -42.64 72.73 0
+}
+Wall {
+  translation -43.4 71.51 0
+  rotation 0 0 1 1.5708
+  name "wall(13)"
+  size 2.8 0.3 0.4
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+MercedesBenzSprinter {
+  hidden position_0_0 -2.6329658524791833e-09
+  hidden position2_0_0 -1.3363348557443373e-05
+  hidden position_0_1 2.632970280580237e-09
+  hidden position2_0_1 -1.336334857757183e-05
+  hidden position_0_2 0.12767177814779462
+  hidden position_0_3 0.12767177814758257
+  hidden rotation_1 0.9999999805898072 1.3164829006864043e-09 0.0001970288951167906 1.336334274881891e-05
+  hidden rotation_2 -0.9999999805897419 1.316485114736802e-09 -0.0001970292261816343 1.336334274881891e-05
+  hidden rotation_3 -1 0 0 0.12767177814779296
+  hidden rotation_4 1 0 0 0.1276717781475841
+  translation -97.30000001025373 61.66179147608545 0.37454899242889406
+  rotation -0.0015608120020028714 0.001560806268831886 0.9999975638718753 1.5708024361304935
+  color 1 1 1
+  name "Mercedes-Benz Sprinter(6)"
+}
+SimpleTree {
+  translation 2 118 0
+  type "crab apple tree"
+}
+LincolnMKZ {
+  hidden position_0_0 -1.5401706962612219e-09
+  hidden position2_0_0 0.00016332202335627452
+  hidden position_0_1 1.540211740865596e-09
+  hidden position2_0_1 0.000179029237727771
+  hidden position_0_2 -0.0001777203186028216
+  hidden position_0_3 -0.00016202553330400303
+  hidden rotation_1 -0.9999999999924647 -7.834134321705077e-10 3.8820889814920535e-06 0.00042614532089922777
+  hidden rotation_2 0.999999999992675 -7.844224715346801e-10 -3.827518098069085e-06 0.0004418521985688536
+  hidden rotation_3 1 0 0 0.0001387708172872872
+  hidden rotation_4 -1 0 0 0.00012307624531363013
+  translation -14.468251741356209 65.0708844056248 0.31398914210520357
+  rotation 0.0014572562291004126 0.0014572625742108112 -0.9999978763927815 1.5707940954912811
+  plate [
+    "plaka/plaka8.png"
+  ]
+  controller "autonomous_vehicle"
+}
+LincolnMKZ {
+  hidden position_0_0 0.001376450279845767
+  hidden position2_0_0 10765.394383326879
+  hidden position_0_1 0.0013870176598147514
+  hidden position2_0_1 10765.698219587453
+  hidden position_0_2 10767.906330441105
+  hidden position_0_3 10768.380686442017
+  hidden rotation_1 0.9999997154801038 -0.0006882250527692886 0.00030884622097706194 3.985232966376878
+  hidden rotation_2 -0.9999997411174198 0.0006935087615520765 0.00019186112332579897 3.681396785300409
+  hidden rotation_3 1 0 0 1.4732860647064931
+  hidden rotation_4 -0.9999999999999999 0 0 0.9989300637945541
+  translation -3832.3787920184286 129.92590714038812 0.2977556663047695
+  rotation 0.003498768250840794 -6.47139459359621e-05 0.9999938771976717 3.1143797296632374
+  color 1 0.7 0.4
+  plate [
+    "plaka/plakaa.jpeg"
+  ]
+  name "vehicle(5)"
+  controller "autonomous_vehicle"
+  sensorsSlotTop [
+    Camera {
+      translation 0.569976 0 -0.0304967
+      rotation 0 1 0 -1.5699953071795862
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.04
+          }
+        }
+      ]
+      fieldOfView 1
+      width 128
+    }
+  ]
+  sensorsSlotCenter [
+    Gyro {
+    }
+    GPS {
+    }
+    Display {
+      width 200
+      height 150
+    }
+  ]
+}
+GuardShelter {
+  translation -43.01 74.26 0
+}
+Wall {
+  translation -42.7799 78.11 0
+  rotation 0 0 1 1.5708
+  name "wall(11)"
+  size 0.7 1 0.4
+  appearance Roughcast {
+    colorOverride 0 0 0
+    textureTransform TextureTransform {
+      scale 2.4 1
+    }
+  }
+}
+StraightRoadSegment {
+  translation 50 -50 0.1
+  rotation 0 0 1 1.5707996938995747
+  width 20
+  speedLimit 23
+  lines [
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  roadBorderHeight 0.2
+  rightBarrier TRUE
+  leftBarrier TRUE
+  length 80
+}
+PedestrianCrossing {
+  translation 50.41 -22.8101 0
+  rotation 0 0 -1 -5.307179586466759e-06
+}
+Pioneer3dx {
+  hidden position_0_0 -0.7993604949684686
+  hidden position_0_1 5.551008406500921e-07
+  hidden position_0_2 1.6471583798077378e-07
+  hidden rotation_1 -0.6017544362367435 -0.564752831147645 -0.5647529001077539 4.225009713746231
+  hidden position_1_0 -2.254262492010833
+  hidden rotation_2 -1 0 0 2.254262492010833
+  hidden rotation_4 0.5773501623203413 -0.5773501623203227 -0.577350482928154 2.0943946793922468
+  hidden rotation_9 0.5773502374280683 -0.577350237428063 -0.5773503327127406 2.0943949047153314
+  hidden position_28_0 1.5807594673280443e-11
+  hidden rotation_29 0.5773836063912356 -0.5772836092315581 -0.5773835861740757 2.0944000202136484
+  translation -42.5005399054469 78.21166054116891 0.49748730159541854
+  rotation 0.022103223929343115 -0.053130209654440944 0.9983429412351271 0.7896865709172234
+  controller "my_controller"
+  supervisor TRUE
+  extensionSlot [
+    Kinect {
+      translation 0.0498496 -0.0470961 0.15
+      rotation 0 0 1 -0.2618053071795865
+      width 700
+      height 500
+      maxRange 5
+    }
+  ]
+}
+CurvedRoadSegment {
+  translation 0 30 0.1
+  rotation 0 1 0 0
+  name "road(1)"
+  width 20
+  speedLimit 14
+  lines [
+    RoadLine {
+      color 0.85 0.75 0.3
+      type "double"
+    }
+  ]
+  roadBorderHeight 0.2
+  rightBarrier TRUE
+  leftBarrier TRUE
+  curvatureRadius 50
+}
+CyberboticsTower {
+  translation -47.86 -178.85 0
+  name "Cyberbotics tower(1)"
+}
+GasStation {
+  translation -56.9 6.62001 0
+  rotation 0 0 1 1.5708
+}
+Bench {
+  translation -103.94 12.7 0
+}
+BigSassafras {
+  translation -109.71 137.84 0
+}
+LincolnMKZ {
+  hidden position_0_0 0.0004171987122754713
+  hidden position2_0_0 76.4717063043522
+  hidden position_0_1 0.000419643550408141
+  hidden position2_0_1 76.46713683840545
+  hidden position_0_2 76.47157344231789
+  hidden position_0_3 76.46700397358667
+  hidden rotation_1 -0.9999999167892737 0.00020859934180567425 -0.0003505820306362556 1.0734826913283466
+  hidden rotation_2 0.9999999151604362 -0.00020982176048202936 -0.0003544770078097972 1.0689132266274117
+  hidden rotation_3 -1 0 0 1.0733497561628522
+  hidden rotation_4 1 0 0 1.068780287431633
+  translation -35.0735 79.9676 0.367302
+  rotation 0.0027309780122174348 2.1572876548208383e-05 0.9999962706398999 -3.1415097114860577
+  color 1 0.6 0.3
+  plate [
+    "plaka/plakaa.jpeg"
+  ]
+  name "vehicle(27)"
+  controller "autonomous_vehicle"
+  sensorsSlotTop [
+    Camera {
+      translation 0.72 0 -0.05
+      children [
+        Transform {
+          translation -0.05 0 0
+          rotation 0 -1 0 1.57
+          children [
+            Shape {
+              appearance PBRAppearance {
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.03
+              }
+            }
+          ]
+        }
+      ]
+      fieldOfView 1
+      width 128
+    }
+  ]
+  sensorsSlotCenter [
+    Display {
+      width 200
+      height 150
+    }
+    Gyro {
+    }
+    GPS {
+    }
+  ]
+}
